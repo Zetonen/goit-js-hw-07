@@ -10,14 +10,6 @@ populateList(listItemsMakup);
 
 refs.galleryContainer.addEventListener("click", onImageClick);
 
-document.querySelector("a").addEventListener("click", (e) => {
-  blockStandartAction(e);
-
-  const newWindow = basicLightbox.create(document.querySelector("a"));
-
-  newWindow.show()
-});
-
 function createListItemsMarkup(elements) {
   return elements
     .map((element) => {
