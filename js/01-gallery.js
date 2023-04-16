@@ -37,13 +37,20 @@ function onImageClick(e) {
   const basicLightBoxImage =
     basicLightbox.create(`    <img src="${image.dataset.source}" width="800" height="600">
   `);
-  
+
   basicLightBoxImage.show();
-  window.addEventListener("keydown", (e) => {
+  // window.addEventListener("keydown", (e) =>{
+  //  if (e.code === "Escape") {
+  //    basicLightBoxImage.close();
+  //  }
+  //}
+  window.addEventListener("keydown", onEscapePress);
+  function onEscapePress(e) {
     if (e.code === "Escape") {
       basicLightBoxImage.close();
+      window.removeEventListener("keydown", onEscapePress);
     }
-  });
+  }
 }
 
 function blockStandartAction(e) {
